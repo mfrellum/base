@@ -2,6 +2,6 @@ FROM mfrellum/base:python
 RUN git clone git@github.com:mitodl/mit_lti_flask_sample.git
 RUN cd mit_lti_flask_sample
 RUN pip install -r requirements.txt
-#
+# See https://github.com/mitodl/pylti
 EXPOSE 5000
 CMD cd /mit_lti_flask_sample/ && python2.7 mit-lti-flask-sample.py
