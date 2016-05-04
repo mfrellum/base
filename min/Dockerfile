@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM ubuntu:14.04 #https://wiki.ubuntu.com/Core
 RUN apt-get update && \
     apt-get -y upgrade && \
     apt-get -y install \
