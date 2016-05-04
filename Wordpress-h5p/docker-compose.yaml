@@ -1,0 +1,19 @@
+# Based on: https://docs.docker.com/compose/wordpress/
+# and     : https://hub.docker.com/_/wordpress/
+#           https://github.com/docker-library/wordpress/blob/c68bb143801741fb9c970de0fac257bdfd4de47c/apache/Dockerfile
+
+version: '2'
+services:
+  web:
+    build: .
+#    command: php -S 0.0.0.0:8000 -t /code/wordpress/
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    volumes:
+      - .:/code
+  db:
+    image: orchardup/mysql
+    environment:
+      MYSQL_DATABASE: wordpress
